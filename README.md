@@ -11,4 +11,21 @@ I have put the file that i used for my picopad in the folder circuitpython incas
 Press and hold the bootsel button and plug in the pico into the pc using a micro usb cable.\
 Leave the bootsel button after it gets detected in windows as a flash drive.\
 Drag and drop the circuitpython file in it. \
-Pico should now restart
+Pico should now restart. \
+Put the file main.py in the main directory. \
+Put the folder adafruit_hid in lib folder. \
+PS: If the folder lib doesn't exist create it.
+
+
+Assembly:
+
+To be updated
+
+Software:
+
+Install Autohotkey from https://www.autohotkey.com or use the installer in the folder AutoHotKey. \
+Right click the file pico.ahk and click on Send to>Desktop (create shortcut). \
+Open run by using win+r or searching for run in windows search. \
+Type(Preferrably copy) shell:startup and click OK. \
+A folder opens up called Startup. \
+Cut and paste the shortcut to the folder which is just opened.
