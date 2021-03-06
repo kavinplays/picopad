@@ -39,7 +39,7 @@ PS: The pins i chose are because i had damaged some of my pins. The leds and but
 
 Software:
 
-Install Autohotkey from https://www.autohotkey.com or use the installer in the folder AutoHotKey. \
+Install Autohotkey from https://www.autohotkey.com or use the installer called "AutoHotkey_setup.exe" \
 Right click the file pico.ahk and click on Send to>Desktop (create shortcut). \
 Open run by using win+r or searching for run in windows search. \
 Type(Preferrably copy) shell:startup and click OK. \
