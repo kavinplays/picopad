@@ -70,23 +70,23 @@ led2.value = False #indicator led is turned off as if a program is stopped when 
 last_monotonic_time = -1 #this is supposed to be the value used to store last time
 sleep_monotonic_time = 0.01 #this is the value between when the keys are pressed and released. it is 10 miliseconds (0.01 seconds)
 
-keyboard.press(Keycode.F19, Keycode.Z)
-now_start = time.monotonic()
-if now_start >= last_monotonic_time + sleep_monotonic_time:
-    keyboard.release(Keycode.F19, Keycode.Z)
-    last_monotonic_time = now_start
+keyboard.press(Keycode.F19, Keycode.Z) #it presses the keys f19 and z
+now_start = time.monotonic() #it sets ongoing time as a variable
+if now_start >= last_monotonic_time + sleep_monotonic_time: #checks if ongoing time is equal to last time + sleep time
+    keyboard.release(Keycode.F19, Keycode.Z) #it releases the keys
+    last_monotonic_time = now_start #it changes the value of last time to that of current ongoing time
 
 while True:
-    now = time.monotonic()
-    led2.value = False
-    buttons = pad.get_pressed()
-    if buttons & button1:
-        led2.value = True
-        keyboard.press(Keycode.F19, Keycode.A)
-        if now >= last_monotonic_time + sleep_monotonic_time:
-            keyboard.release(Keycode.F19, Keycode.A)
-            last_monotonic_time = now
-    elif buttons & button2:
+    now = time.monotonic() #it sets ongoing time as a variable
+    led2.value = False #it turns the led off.This is part of blink on key click. The led turns on when a key is pressed and is then turned off when the loop is rerun
+    buttons = pad.get_pressed() #activates the gamepad
+    if buttons & button1: #it detects if the first button is pressed
+        led2.value = True #it turns the led off.This is part of blink on key click. The led turns on when a key is pressed and is then turned off when the loop is rerun
+        keyboard.press(Keycode.F19, Keycode.A) #it presses the keys f19 and a
+        if now >= last_monotonic_time + sleep_monotonic_time: #checks if ongoing time is equal to last time + sleep time
+            keyboard.release(Keycode.F19, Keycode.A) #it releases the keys
+            last_monotonic_time = now #it changes the value of last time to that of current ongoing time
+    elif buttons & button2: #the same thing is done for the rest of the keys
         led2.value = True
         keyboard.press(Keycode.F19, Keycode.B)
         if now >= last_monotonic_time + sleep_monotonic_time:
@@ -128,10 +128,10 @@ while True:
         if now >= last_monotonic_time + sleep_monotonic_time:
             keyboard.release(Keycode.F19, Keycode.H)
             last_monotonic_time = now
-    time.sleep(0.05)
-    adc1_converted = math.floor(adc1.value / 64)
-    adc2_converted = math.floor(adc2.value / 64)
-    print(str(adc1_converted) + "|" + str(adc2_converted))
-    while buttons:
+    time.sleep(0.05) #this is time between two runs of the main loop
+    adc1_converted = math.floor(adc1.value / 64) #this converts the value of first potentiometer such that it is useable by deej
+    adc2_converted = math.floor(adc2.value / 64) #this converts the value of second potentiometer such that it is useable by deej
+    print(str(adc1_converted) + "|" + str(adc2_converted)) #this prints the values of both the potentiometers to the serial monitor which is then read by deej
+    while buttons: #this is time for buttons to get clicked and also prevents debouncing of the keys
         buttons = pad.get_pressed()
         time.sleep(0.05)
