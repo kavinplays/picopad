@@ -19,7 +19,23 @@ PS: If the folder lib doesn't exist create it.
 
 Assembly:
 
-To be updated
+The following are connections for buttons, potentiometers and leds. To find out the locations of the pins refer to pico_pinout.png \
+Buttons: \
+1 - GP22 \
+2 - GP21 \
+3 - GP20 \
+4 - GP14 \
+5 - GP19 \
+6 - GP18 \
+7 - GP17 \
+8 - GP16 \
+Potentiometers: \
+1 - GP27 \
+2 - GP26 \
+Leds: \
+1 - GP13 \
+2 - GP11 \
+PS: The pins i chose are because i had damaged some of my pins. The leds and buttons can be connected to any GPIO(pin names starting with GP) and potentiometers work with GP26, GP27 and GP28 
 
 Software:
 
