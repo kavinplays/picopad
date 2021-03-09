@@ -15,7 +15,6 @@ Pico should now restart. \
 Put the file main.py in the main directory. \
 Put the folder adafruit_hid in lib folder. \
 PS: If the folder lib doesn't exist create it.
-Did it work?
 
 Assembly:
 
