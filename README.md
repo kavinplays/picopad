@@ -1,4 +1,5 @@
 # picopad
+<!-- Checking comments in .md files -->
 This is a repository where i store files for my macropad made using Raspberry Pi Pico\
 The picopad has 8 buttons and two potentiometers.\
 The buttons send signal to Autohotkey which then proceeds to do significant macros.\
