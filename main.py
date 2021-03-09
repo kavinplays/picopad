@@ -11,7 +11,7 @@ from adafruit_hid.keycode import Keycode
 #imported all the libraries we are going to use
 
 keyboard = Keyboard(usb_hid.devices) #Connected to the pc as a keyboard. Now the pc detects that a keyboard is attached.
-# test
+# test1
 btn1 = digitalio.DigitalInOut(board.GP22) #btn1 is initialized, i.e. it has given a variable name and told the pico where to find the button via GPIO(22 in this case)
 btn1.direction = digitalio.Direction.INPUT #it is stating that the button is input only which helps the pico understand that it is a button or switch that gives one of two values - 0 and 1
 btn1.pull = Pull.DOWN #the button is pulled down via code so that it doesn't debounce, i.e. act like it is pressed multiple times when it is actually pressed only ones
